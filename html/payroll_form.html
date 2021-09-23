@@ -5,8 +5,9 @@
         <meta name="viewport" content="width=device=width, initial-scale=1.0">
         <link  href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap">
         <link rel="stylesheet" href="../css/payroll_form.css">
-        <link href="..\css\payroll_form.css">
         <title>Employee Payroll Form</title>
+        <script defer src="../java/EmployeePayroll.js"></script>
+        <script defer src="../java/payroll_form.js"></script>
         
     </head>
     <body>
@@ -23,8 +24,8 @@
 
         <!---UC2---->
             <div class="form-content">
-            <form class="form" action="#"
-                onsubmit="save();return false">
+            <form class="form" action="#" onreset="resetForm()"
+                onsubmit="save()">
                 <div class="form-head">
                     Employee Payroll form
                 </div>
@@ -34,6 +35,7 @@
                     <input class="input" type="text" id="name"
                             name="name" placeholder="Your name.."
                             required>
+                    <error-output class="text-error" for="text"></error-output>
                 </div>
             
         <!---UC3---->
@@ -48,12 +50,12 @@
                         <label>
                          <input type="radio" id="profile2" name="profile"
                                  value="..\assets\Ellipse -4.png" required>
-                         <img class="profile" id='image2' src="..\assets\Ellipse -2.png" >   
+                         <img class="profile" id='image2' src="..\assets\Ellipse -4.png" >   
                         </label>
                         <label>
                          <input type="radio" id="profile3" name="profile"
                                  value="..\assets\Ellipse -2.png" required>
-                         <img class="profile" id='image3' src="..\assets\Ellipse -4.png" >   
+                         <img class="profile" id='image3' src="..\assets\Ellipse -2.png" >   
                         </label>    
                         <label>
                             <input type="radio" id="profile4" name="profile"
@@ -76,15 +78,15 @@
         <div class="row-content">
             <label class="label text" for="department">Department</label>
             <div >
-                <input class="checkbox" type="checkbox" id="hr" name="hr" value="HR"> 
+                <input class="checkbox" type="checkbox" id="hr" name="department" value="HR"> 
                 <label class="text" for="hr">HR</label>
-                <input class="checkbox" type="checkbox" id="sales" name="sales" value="Sales"> 
+                <input class="checkbox" type="checkbox" id="sales" name="department" value="Sales"> 
                 <label class="text" for="sales">Sales</label>
-                <input class="checkbox" type="checkbox" id="finance" name="finance" value="Finance"> 
+                <input class="checkbox" type="checkbox" id="finance" name="department" value="Finance"> 
                 <label class="text" for="finance">Finance</label>
-                <input class="checkbox" type="checkbox" id="engineer" name="engineer" value="Engineer"> 
+                <input class="checkbox" type="checkbox" id="engineer" name="department" value="Engineer"> 
                 <label class="text" for="engineer">Engineer</label>
-                <input class="checkbox" type="checkbox" id="others" name="others" value="Others"> 
+                <input class="checkbox" type="checkbox" id="others" name="department" value="Others"> 
                 <label class="text" for="others">Others</label>
             </div>
         </div>
@@ -130,7 +132,7 @@
                 <option value="28">28</option>
                 <option value="29">29</option>
                 <option value="30">30</option>
-                <option value="31">30</option>
+                <option value="31">31</option>
             </select>
             <select id="month" name="Month">
             <option value="jan">January</option>
@@ -154,6 +156,7 @@
             <option value="2016">2016</option>
             </select>
         </div>
+        <error-output class="date-error" for="startDate"></error-output>
         </div>
 
         <!---UC6---->
@@ -165,7 +168,7 @@
             <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
             <div class="submit-reset">
                 <button type="submit" class="button submitButton" id="submitButton">Submit</button>
-                <button type="reset" class="resetButton button">reset</button>
+                <button type="reset" class="resetButton button">Reset</button>
             </div>
         </div>
             
