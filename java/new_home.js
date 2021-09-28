@@ -30,10 +30,10 @@ const createInnerHtml = () => {
     <td>${empPayrollData._salary}</td>
     <td>${stringifyDate(empPayrollData._startDate)}</td>
     <td>
-        <img id="${empPayrollData._id}" onclick="remove(this)"
-                src="../assets/delete-black-18dp.svg" alt="delete">
-        <img id="${empPayrollData._id}" onclick="update(this)"
-                src="../assets/create-black-18dp.svg" alt="edit">
+        <img id="${empPayrollData._id}" onclick="remove(this)" alt="delete"
+                src="../assets/delete-black-18dp.svg">
+        <img id="${empPayrollData._id}" onclick="update(this)" alt="edit"
+                src="../assets/create-black-18dp.svg">
     </td>
     </tr>
     `;
@@ -84,7 +84,7 @@ const createEmployeePayrollJSON = () => {
  const remove = (node) => {
      let empPayrollData = empPayrollList.find(empData => empData._id == node.id);
      if (!empPayrollData) return;
-     const index  = empPayrollList
+     const index = empPayrollList
                     .map(empData => empData._id)
                     .indexOf(empPayrollData._id);
     empPayrollList.splice(index, 1);
